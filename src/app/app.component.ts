@@ -9,6 +9,7 @@ import { PDFDocumentProxy } from 'ng2-pdf-viewer';
 export class AppComponent {
   src = 'https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf';
   totalPages: number = 0;
+  currPages: number = 1;
   ngOnInit() {
     console.log(this.totalPages);
   }
@@ -20,6 +21,7 @@ export class AppComponent {
    */
   pageChange(e: number) {
     console.log('(page-change)', e + '/' + this.totalPages);
+    this.currPages = e;
   }
 
   /**
